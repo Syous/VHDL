@@ -10,5 +10,6 @@ entity two_bit_xnor is
 end entity two_bit_xnor;
 
 architecture rtl of two_bit_xnor is
-    F_OUT   <=  A_IN xnor B_IN;
+    begin
+        F_OUT   <=  A_IN xnor B_IN;
 end architecture rtl;
