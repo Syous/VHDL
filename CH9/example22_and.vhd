@@ -10,5 +10,6 @@ entity two_bit_and is
 end entity two_bit_and;
 
 architecture rtl of two_bit_and is
-    F_OUT   <=  A_IN and B_IN and C_IN;
+    begin
+        F_OUT   <=  A_IN and B_IN and C_IN;
 end architecture rtl;
