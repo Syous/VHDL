@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 entity example22_3bitcomp is
     port
     (
-        A_IN, B_IN      :       std_logic_vector(2 downto 0);
-        EQ_OUT          :       std_logic
+        A_IN, B_IN      :       in  std_logic_vector(2 downto 0);
+        EQ_OUT          :       out std_logic
     );
 end entity example22_3bitcomp;
 
@@ -31,7 +31,7 @@ architecture arch_3bitcomp of example22_3bitcomp is
         );
     end component example22_and;
     
-    signal xnor1_out, xnor2_out, xnor3_out  :   std_logic;
+    signal xnor1_out, xnor2_out, xnor3_out, and3_out  :   std_logic;
 
     begin
         
@@ -41,5 +41,6 @@ architecture arch_3bitcomp of example22_3bitcomp is
         xnor3   :   example22_xnor  port map    (A_IN(2), B_IN(2), xnor3_out);
         
         -- create the 3-input and gate using the output signals from the xnors
-        and3    :   example22_and   port map    (xnor1_out, xnor2_out, xnor3_out, EQ_OUT);
+        and3    :   example22_and   port map    (xnor1_out, xnor2_out, xnor3_out, and3_out);
+        EQ_OUT  <=  and3_out;
 end architecture arch_3bitcomp;
