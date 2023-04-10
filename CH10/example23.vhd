@@ -13,14 +13,11 @@ entity example23 is
 end entity example23;
 
 architecture example23_8bitreg of example23 is
-    signal  tmp_reg :   std_logic_vector(7 downto 0);
     begin
         reg_process :   process(CLK)
             if  (rising_edge(CLK))    then
                 if  (LD = '1')  then
-                    REG_OUT <=  tmp_reg;
-                else
-                    tmp_reg <=  REG_IN;
+                    REG_OUT <=  REG_IN;
                 end if;
             end if;
         end process reg_process;
