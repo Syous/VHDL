@@ -21,4 +21,4 @@ architecture rtl_reg8bit of reg8bit is
                     end if;
                 end if;
         end process myCLK_proc;
-end architecture rtl_reg8bit;   
+end architecture rtl_reg8bit;
